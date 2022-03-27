@@ -44,8 +44,7 @@ with Image.open(image) as image:
 			# the front color is set as the character color,
 			# and the back color is set as the background, doubling
 			# the resolution
-			termimg += f'\x1b[38;2;{fr};{fg};{fb}m\x1b[48;2;{br};{bg};{bb}m▀\033[0m'
-
+			termimg += f'\x1b[38;2;{str(fr).zfill(3)};{str(fg).zfill(3)};{str(fb).zfill(3)}m\x1b[48;2;{str(br).zfill(3)};{str(bg).zfill(3)};{str(bb).zfill(3)}m▀\033[0m'
 		termimg += '\n'
 # write the character image to the terminal
 print(termimg)
