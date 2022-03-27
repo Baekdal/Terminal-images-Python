@@ -17,6 +17,10 @@ with Image.open(image) as image:
 	# set image size to terminal window width (usually 80, but mine screen is bigger)
 	newheight = newheight = int((height / width)*windowwidth)
 
+	# fix image if height is uneven pixels
+	if newheight%2 != 0:
+		newheight += 1
+
 	# resize the image
 	image = image.resize((windowwidth,newheight), Image.LANCZOS)
 
