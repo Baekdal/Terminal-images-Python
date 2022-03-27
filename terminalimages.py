@@ -45,3 +45,5 @@ with Image.open(image) as image:
 		termimg += '\n'
 # write the character image to the terminal
 print(termimg)
+
+### Double pixel trick from here: https://www.uninformativ.de/blog/postings/2016-12-17/0/POSTING-en.html
