@@ -1,9 +1,19 @@
+#!/usr/bin/env python
+
+import sys
 from PIL import Image, ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-# set source and image file
-image = 'image.jpg'
-windowwidth = 160
+# set source and image file from arguments
+if len(sys.argv) > 1:
+    image = sys.argv[1]
+else:
+    print("usage: terminalimages.py /path/to/image.jpg [width]")
+    quit()
+if len(sys.argv) > 2:
+    windowwidth = int(sys.argv[2])
+else:
+    windowwidth = 160
 
 # open the image
 with Image.open(image) as image:
